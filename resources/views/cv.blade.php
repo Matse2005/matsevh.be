@@ -97,7 +97,7 @@
     <x-section header="Skills"
         subtitle="Hieronder vind je een lijst van enkele van mijn skills, van hard- tot softskills. Er kunnen technologieën ontbreken waar ik ervaring mee heb, dus bij vragen kan je me altijd contacteren.">
         <div class="flex flex-wrap gap-3">
-            @foreach (App\Models\Skills::all() as $skill)
+            @foreach (App\Models\Skills::orderByDesc('logo')->get() as $skill)
                 <flux:button variant="filled" class="flex items-center gap-2">
                     @if ($skill->logo)
                         <img class="max-h-6 w-6" src="/storage/{{ $skill->logo }}" alt="{{ $skill->name }}">
