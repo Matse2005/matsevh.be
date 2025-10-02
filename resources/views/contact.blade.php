@@ -3,13 +3,13 @@
     <section>
         <flux:text>
             Je kan me altijd bereiken op:
-            <flux:link href="mailto:matse@vanhorebeek.be">
+            <flux:link href="mailto:matse@vanhorebeek.be" data-umami-event="mailto-matse@vanhorebeek.be">
                 matse@vanhorebeek.be
             </flux:link>
         </flux:text>
         <flux:text>
             Je me ook altijd een bericht sturen
-            <flux:link target="_blank" href="https://linkedin.com/in/matsevh">
+            <flux:link target="_blank" href="https://linkedin.com/in/matsevh"data-umami-event="social-linkedin">
                 op linkedin
             </flux:link>
         </flux:text>

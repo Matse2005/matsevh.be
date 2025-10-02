@@ -31,11 +31,13 @@
         <flux:navbar class="me-1.5 space-x-0.5 rtl:space-x-reverse py-0!">
             <flux:tooltip :content="__('GitHub')" position="bottom">
                 <flux:navbar.item class="h-10 max-lg:hidden [&>div>svg]:size-5" icon="github"
-                    href="https://github.com/matse2005" target="_blank" :label="__('GitHub')" />
+                    href="https://github.com/matse2005" target="_blank" :label="__('GitHub')"
+                    data-umami-event="social-github" />
             </flux:tooltip>
             <flux:tooltip :content="__('LinkedIn')" position="bottom">
                 <flux:navbar.item class="h-10 max-lg:hidden [&>div>svg]:size-5" icon="linkedin"
-                    href="https://linkedin.com/in/matsevh" target="_blank" label="LinkedIn" />
+                    href="https://linkedin.com/in/matsevh" target="_blank" label="LinkedIn"
+                    data-umami-event="social-linkedin" />
             </flux:tooltip>
         </flux:navbar>
 
@@ -120,10 +122,12 @@
                 {{ __('Documentation') }}
             </flux:navlist.item> --}}
 
-            <flux:navlist.item icon="github" href="https://github.com/matse2005" target="_blank">
+            <flux:navlist.item icon="github" href="https://github.com/matse2005" target="_blank"
+                data-umami-event="social-github">
                 GitHub
             </flux:navlist.item>
-            <flux:navlist.item icon="linkedin" href="https://linkedin.com/in/matsevh" target="_blank">
+            <flux:navlist.item icon="linkedin" href="https://linkedin.com/in/matsevh" target="_blank"
+                data-umami-event="social-linkedin">
                 LinkedIn
             </flux:navlist.item>
         </flux:navlist>
