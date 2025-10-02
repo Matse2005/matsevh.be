@@ -19,7 +19,3 @@ Route::get('/mijn-cv', function () {
 Route::get('/contacteer-mij', function () {
     return view('contact');
 })->name('contact');
-
-Route::get('/phpinfo', function () {
-    phpinfo();
-});
