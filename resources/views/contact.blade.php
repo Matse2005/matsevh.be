@@ -9,7 +9,7 @@
         </flux:text>
         <flux:text>
             Je me ook altijd een bericht sturen
-            <flux:link target="_blank" href="https://linkedin.com/in/matsevh"data-umami-event="social-linkedin">
+            <flux:link target="_blank" href="https://linkedin.com/in/matsevh" data-umami-event="social-linkedin">
                 op linkedin
             </flux:link>
         </flux:text>

@@ -41,8 +41,8 @@
 
                             @if ($project->demo_url)
                                 <flux:button class="w-full" variant="primary" icon="arrow-top-right-on-square"
-                                    href="{{ $project->demo_url }}"
-                                    target="_blank"data-umami-event="Project Homepage - {{ $project->title }}">
+                                    href="{{ $project->demo_url }}" target="_blank"
+                                    data-umami-event="Project Homepage - {{ $project->title }}">
                                     Bekijken
                                 </flux:button>
                             @endif
