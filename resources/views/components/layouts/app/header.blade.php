@@ -18,7 +18,7 @@
 
         <flux:navbar class="-mb-px max-lg:hidden">
             <flux:navbar.item :href="route('cv')" :current="request()->routeIs('cv')" wire:navigate>
-                {{ __('CV') }}
+                {{ __('Mijn CV') }}
             </flux:navbar.item>
             <flux:navbar.item :href="route('projects')" :current="request()->routeIs('projects')" wire:navigate>
                 {{ __('Projecten') }}

@@ -1,4 +1,5 @@
-<x-layouts.app :title="__('Contacteer me')" header='Get in touch' subtitle="Een project of een kans voor? Contacteer mij">
+<x-layouts.app :title="__('Contacteer me')" header='Get in touch'
+    subtitle="Voor alles rond projecten, samenwerking of vragen, contacteer mij hier.">
     <section>
         <flux:text>
             Je kan me altijd bereiken op:

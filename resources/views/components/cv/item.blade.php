@@ -1,5 +1,5 @@
 <x-card>
-    <div class="flex justify-between items-center">
+    <div class="flex max-sm:flex-col max-sm:justify-start max-sm:items-start justify-between items-center gap-3">
         <div>
             <flux:heading size="md">{{ $title }}</flux:heading>
             <flux:text class="flex gap-1 items-center">

@@ -56,7 +56,7 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->login()
-            ->registration()
+            // ->registration()
             ->passwordReset()
             ->emailVerification()
             ->emailChangeVerification()

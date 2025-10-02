@@ -5,5 +5,5 @@
     <span class="mb-0.5 truncate leading-tight font-semibold">MatseVH</span>
 </div> --}}
 <div class="ms-1 grid flex-1 text-start">
-    <flux:heading size="lg" class="leading-tight">MatseVH</flux:heading>
+    <flux:heading size="lg" class="leading-tight font-bold!">MatseVH</flux:heading>
 </div>

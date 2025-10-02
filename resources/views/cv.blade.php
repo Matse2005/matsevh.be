@@ -1,5 +1,5 @@
 <x-layouts.app :title="__('Mijn CV')" header='Mijn CV'
-    subtitle="Over de jaren heen heb ik verschillende skills geleerd en ervaringen opgedaan. Op deze pagina kan je meer te weten komen over mijn skills, opleidingen die ik gedaan heb, cursussen die ik gevolgt heb en werk ervaring die ik heb.">
+    subtitle="In de loop der jaren heb ik verschillende skills geleerd en ervaring opgedaan. Op deze pagina kan je meer lezen over mijn vaardigheden, opleidingen, cursussen en werkervaring.">
     {{-- <section class="grid grid-cols-1 sm:grid-cols-2">
         <div class="">
             <flux:heading size="lg">Talen</flux:heading>
@@ -39,7 +39,7 @@
         </div>
     </x-section>
     <x-section header="Skills"
-        subtitle="Inleidende tekst op basis van skills, ook zeggen dat in sommige skills al meer ervaring heb dan andere.">
+        subtitle="Hieronder vind je een lijst van enkele van mijn skills, van hard- tot softskills. Er kunnen technologieën ontbreken waar ik ervaring mee heb, dus bij vragen kan je me altijd contacteren.">
         <div class="flex flex-wrap gap-3">
             @foreach (App\Models\Skills::all() as $skill)
                 <flux:button variant="filled" class="flex items-center gap-2">
@@ -51,7 +51,7 @@
             @endforeach
         </div>
     </x-section>
-    <x-section header="Studies" subtitle="Een lijst van al men studies">
+    <x-section header="Studies">
         <div class="flex flex-col gap-3">
             @foreach (App\Models\Study::all() as $study)
                 <x-cv.item icon="academic-cap" :title="$study->degree" :location="$study->school" :description="$study->description" :start="$study->start"
@@ -59,7 +59,7 @@
             @endforeach
         </div>
     </x-section>
-    <x-section header="Ervaring" subtitle="Een lijst van al men werkervaring">
+    <x-section header="Ervaring">
         <div class="flex flex-col gap-3">
             @foreach (App\Models\Work::all() as $work)
                 <x-cv.item icon="briefcase" :title="$work->role" :location="$work->company" :description="$work->description" :start="$work->start"
@@ -67,7 +67,7 @@
             @endforeach
         </div>
     </x-section>
-    <x-section header="Cursussen" subtitle="Een lijst van al men cursussen">
+    <x-section header="Cursussen">
         <div class="flex flex-col gap-3">
             @foreach (App\Models\Course::all() as $course)
                 <x-cv.item icon="book-open" :title="$course->title" :location="$course->institution" :description="$course->description" :start="$course->start"

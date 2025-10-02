@@ -1,25 +1,17 @@
 <x-layouts.app :title="__('Projecten')" header='Projecten'
-    subtitle="Op deze pagina kan je een aantal projecten vinden die ik zelf gemaakt heb of waar ik aan mee gewerkt heb.">
+    subtitle="Op deze pagina ontdek je projecten waaraan ik gewerkt heb, dit kan zelfstandig  zijn maar ook in teamverband.">
     <x-section>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
+        <div class="grid
+    grid-cols-1 lg:grid-cols-2 gap-3">
             @foreach (App\Models\Project::orderByDesc('id')->get() as $project)
-                {{-- <flux:button variant="filled" class="flex items-center gap-2">
-                    @if ($skill->logo)
-                        <img class="size-6" src="{{ $skill->logo }}" />
-                    @endif
-                    {{ $skill->skill }}
-                </flux:button> --}}
                 <x-card class="space-y-4">
-                    {{-- Project image --}}
                     @if ($project->image)
                         <img src="{{ $project->image }}" alt="{{ $project->title }}"
                             class="w-full h-48 object-cover rounded-lg" />
                     @endif
 
-                    {{-- Title --}}
-                    <flux:heading size="lg">{{ $project->title }}</flux:heading>
+                    <flux:heading level="3" size="lg">{{ $project->title }}</flux:heading>
 
-                    {{-- Description --}}
                     @if ($project->description)
                         <flux:text>
                             {!! $project->description !!}
@@ -37,7 +29,6 @@
                         </div>
                     @endif --}}
 
-                    {{-- Links --}}
                     @if ($project->github_url || $project->demo_url)
                         <div class="flex justify-between gap-3 mt-3">
                             @if ($project->github_url)

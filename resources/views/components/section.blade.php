@@ -2,7 +2,7 @@
     @if (isset($header) || isset($subtitle))
         <div>
             @isset($header)
-                <flux:heading size="lg">{{ $header }}</flux:heading>
+                <flux:heading level="2" size="lg">{{ $header }}</flux:heading>
             @endisset
 
             @isset($subtitle)
