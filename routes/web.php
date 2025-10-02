@@ -16,7 +16,10 @@ Route::get('/mijn-cv', function () {
     return view('cv');
 })->name('cv');
 
-
 Route::get('/contacteer-mij', function () {
     return view('contact');
 })->name('contact');
+
+Route::get('/phpinfo', function () {
+    phpinfo();
+});
