@@ -100,7 +100,7 @@
             @foreach (App\Models\Skills::all() as $skill)
                 <flux:button variant="filled" class="flex items-center gap-2">
                     @if ($skill->logo)
-                        <img class="h-6 w-auto" src="/storage/{{ $skill->logo }}" alt="{{ $skill->name }}">
+                        <img class="max-h-6 w-6" src="/storage/{{ $skill->logo }}" alt="{{ $skill->name }}">
                     @endif
                     {{ $skill->skill }}
                 </flux:button>
