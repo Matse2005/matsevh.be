@@ -87,8 +87,8 @@
     <x-section subtitle="Wil je meer info weten of een pdf versie van mijn CV bekijk deze dan hieronder.">
         <div class="flex flex-wrap gap-3">
             @foreach (App\Models\Document::type('cv') as $document)
-                <flux:button href="{{ $document->file_path }}" target="_blank" icon="arrow-down-tray" variant="primary"
-                    class="flex items-center gap-2">
+                <flux:button href="{{ storage_url($document->file_path) }}" target="_blank" icon="arrow-down-tray"
+                    variant="primary" class="flex items-center gap-2">
                     {{ $document->title }}
                 </flux:button>
             @endforeach
