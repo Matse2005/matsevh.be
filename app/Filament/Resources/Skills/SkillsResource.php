@@ -35,6 +35,7 @@ class SkillsResource extends Resource
                     ->maxLength(255),
                 FileUpload::make('logo')
                     ->image()
+                    ->disk('public')
                     ->directory('site/skills'),
             ]);
     }

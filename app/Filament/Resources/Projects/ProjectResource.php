@@ -46,6 +46,7 @@ class ProjectResource extends Resource
                     ->url(),
                 FileUpload::make('image')
                     ->image()
+                    ->disk('public')
                     ->directory('site/projects'),
                 TextInput::make('order')
                     ->required()
