@@ -6,7 +6,7 @@
             @foreach (App\Models\Project::orderByDesc('id')->get() as $project)
                 <x-card class="space-y-4">
                     @if ($project->image)
-                        <img src="{{ $project->image }}" alt="{{ $project->title }}"
+                        <img src="/storage/{{ $project->image }}" alt="{{ $project->title }}"
                             class="w-full h-48 object-cover rounded-lg" />
                     @endif
 
