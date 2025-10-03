@@ -22,7 +22,9 @@ class SkillsResource extends Resource
 {
     protected static ?string $model = Skills::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedWrenchScrewdriver;
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Website';
 
     protected static ?string $recordTitleAttribute = 'Skills';
 

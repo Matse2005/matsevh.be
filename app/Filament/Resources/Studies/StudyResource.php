@@ -23,7 +23,9 @@ class StudyResource extends Resource
 {
     protected static ?string $model = Study::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedAcademicCap;
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Website';
 
     public static function form(Schema $schema): Schema
     {

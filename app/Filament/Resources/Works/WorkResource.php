@@ -23,7 +23,9 @@ class WorkResource extends Resource
 {
     protected static ?string $model = Work::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBriefcase;
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Website';
 
     public static function form(Schema $schema): Schema
     {
