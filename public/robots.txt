@@ -1,2 +1,53 @@
-User-agent: *
+# ============================
+# Block AI / LLM crawlers
+# ============================
+
+User-agent: OpenAI
+Disallow: /
+
+User-agent: Anthropic
+Disallow: /
+
+User-agent: BingAI
+Disallow: /
+
+User-agent: MPTBot
+Disallow: /
+
+User-agent: LLaMA-Bot
+Disallow: /
+
+User-agent: TikTokbot
+Disallow: /
+
+# Add any other known AI/LLM crawlers here
+# User-agent: [BotName]
+# Disallow: /
+
+# ============================
+# Allow regular search engines
+# ============================
+
+User-agent: Googlebot
 Disallow:
+
+User-agent: Googlebot-Image
+Disallow:
+
+User-agent: Googlebot-News
+Disallow:
+
+User-agent: Googlebot-Video
+Disallow:
+
+User-agent: Bingbot
+Disallow:
+
+User-agent: DuckDuckBot
+Disallow:
+
+User-agent: Slurp
+Disallow:
+
+# Sitemap location
+Sitemap: https://matsevh.be/sitemap.xml

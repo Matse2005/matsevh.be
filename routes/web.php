@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Features;
-use Livewire\Volt\Volt;
+use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', function () {
     return view('home');
@@ -18,4 +17,8 @@ Route::get('/mijn-cv', function () {
 
 Route::get('/contacteer-mij', function () {
     return view('contact');
+})->name('contact');
+
+Route::get('/gen', function () {
+    SitemapGenerator::create('https://matsevh.be')->writeToFile($path);
 })->name('contact');
