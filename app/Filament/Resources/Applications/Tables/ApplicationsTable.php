@@ -10,6 +10,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class ApplicationsTable
@@ -74,6 +75,9 @@ class ApplicationsTable
             throw new \Exception('No cover letter uploaded.');
         }
 
+        Log::alert('===================================');
+        Log::alert('Start with Mail build');
+        Log::alert(env('PERSONAL_MAIL_HOST'));
         $mailer = Mail::build([
             'transport' => 'smtp',
             'host' => env('PERSONAL_MAIL_HOST'),
