@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('company_application_name')->nullable();
             $table->string('company_application_url')->nullable();
             $table->foreignId('template_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('document_id')->constrained()->nullOnDelete();
+            $table->foreignId('document_id')->nullable()->constrained()->nullOnDelete();
             $table->string('status');
             $table->timestamp('sent_at')->nullable();
             $table->text('note')->nullable();
