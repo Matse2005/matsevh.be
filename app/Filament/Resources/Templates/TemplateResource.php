@@ -40,7 +40,8 @@ class TemplateResource extends Resource
                         'contact_person',
                         'role',
                         'application_name',
-                        'application_url'
+                        'application_url',
+                        'note'
                     ])
                     ->required()
                     ->columnSpanFull(),

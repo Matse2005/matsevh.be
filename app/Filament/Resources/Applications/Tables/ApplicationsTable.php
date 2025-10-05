@@ -71,10 +71,6 @@ class ApplicationsTable
 
     protected static function sendApplication(Application $application)
     {
-        if (!$application->document) {
-            throw new \Exception('No cover letter uploaded.');
-        }
-
         Mail::mailer('personal')->to($application->company_email)
             ->send(new Sollicitation($application));
 

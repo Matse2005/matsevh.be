@@ -50,6 +50,15 @@ class Sollicitation extends Mailable
                 'role' => $this->application->company_role ?? '',
                 'application_name' => $this->application->company_application_name ?? '',
                 'application_url' => $this->application->company_application_url ?? '',
+                'note' => RichContentRenderer::make($this->application->note)
+                    ->mergeTags([
+                        'company' => $this->application->company_name ?? '',
+                        'contact_person' => $this->application->company_contact ?? 'meneer/mevrouw',
+                        'contact_email' => $this->application->company_email ?? '',
+                        'role' => $this->application->company_role ?? '',
+                        'application_name' => $this->application->company_application_name ?? '',
+                        'application_url' => $this->application->company_application_url ?? '',
+                    ]) ?? ''
             ])
             ->toHtml();
 
@@ -64,18 +73,20 @@ class Sollicitation extends Mailable
      */
     public function attachments(): array
     {
-        if (!$this->application->document) {
+        if (!$this->application->letter) {
             return [
-                Attachment::fromStorageDisk('public', $this->application->letter)
+                Attachment::fromStorageDisk('public', $this->application->document->file_path)
+                    ->as('cv.pdf')
+                    ->withMime('application/pdf'),
             ];
         }
 
         return [
             Attachment::fromStorageDisk('public', $this->application->document->file_path)
-                ->as('CV.pdf')
+                ->as('cv.pdf')
                 ->withMime('application/pdf'),
             Attachment::fromStorageDisk('private', $this->application->letter)
-                ->as('CoverLetter.pdf')
+                ->as('motivatiebrief.pdf')
                 ->withMime('application/pdf'),
         ];
     }

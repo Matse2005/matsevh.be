@@ -23,7 +23,8 @@ return new class extends Migration
             $table->foreignId('document_id')->constrained()->nullOnDelete();
             $table->string('status');
             $table->timestamp('sent_at')->nullable();
-            $table->string('letter');
+            $table->text('note')->nullable();
+            $table->string('letter')->nullable();
             $table->timestamps();
         });
     }

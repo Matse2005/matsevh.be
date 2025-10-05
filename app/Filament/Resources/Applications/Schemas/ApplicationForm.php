@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Applications\Schemas;
 
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
@@ -55,8 +56,16 @@ class ApplicationForm
                         FileUpload::make('letter')
                             ->acceptedFileTypes(['application/pdf'])
                             ->disk('private')
-                            ->directory('sollicitation/letters')
-                            ->required(),
+                            ->directory('sollicitation/letters'),
+                        RichEditor::make('note')
+                            ->mergeTags([
+                                'company',
+                                'contact_email',
+                                'contact_person',
+                                'role',
+                                'application_name',
+                                'application_url'
+                            ])
                     ])
             ]);
     }
