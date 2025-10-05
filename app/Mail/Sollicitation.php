@@ -45,7 +45,7 @@ class Sollicitation extends Mailable
         $html = RichContentRenderer::make($this->application->template->body)
             ->mergeTags([
                 'company' => $this->application->company_name ?? '',
-                'contact_person' => $this->application->company_contact ?? '',
+                'contact_person' => $this->application->company_contact ?? 'meneer/mevrouw',
                 'contact_email' => $this->application->company_email ?? '',
                 'role' => $this->application->company_role ?? '',
                 'application_name' => $this->application->company_application_name ?? '',
