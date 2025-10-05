@@ -75,22 +75,9 @@ class ApplicationsTable
             throw new \Exception('No cover letter uploaded.');
         }
 
-        Log::alert('===================================');
-        Log::alert('Start with Mail build');
-        Log::alert(env('PERSONAL_MAIL_HOST'));
-        $mailer = Mail::build([
-            'transport' => 'smtp',
-            'host' => env('PERSONAL_MAIL_HOST'),
-            'port' => env('PERSONAL_MAIL_PORT'),
-            'encryption' => env('PERSONAL_MAIL_ENCRYPTION'),
-            'username' => env('PERSONAL_MAIL_USERNAME'),
-            'password' => env('PERSONAL_MAIL_PASSWORD'),
-        ]);
-        $mailer->to($application->company_email)
-            ->send(new Sollicitation($application))
-        ;
+        Mail::mailer('personal')->to($application->company_email)
+            ->send(new Sollicitation($application));
 
-        // Update application status
         $application->update([
             'status' => 'applied',
             'sent_at' => now(),
