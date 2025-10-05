@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Document extends Model
 {
     protected $fillable = [
+        'name',
         'title',
         'file_path',
         'type',        // cv, certificate, portfolio, other

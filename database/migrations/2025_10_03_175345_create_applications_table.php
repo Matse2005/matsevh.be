@@ -13,10 +13,16 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('company_id')->constrained()->cascadeOnDelete();
+            $table->string('company_name');
+            $table->string('company_contact')->nullable();
+            $table->string('company_email');
+            $table->string('company_role');
+            $table->string('company_application_name')->nullable();
+            $table->string('company_application_url')->nullable();
             $table->foreignId('template_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('document_id')->constrained()->nullOnDelete();
             $table->string('status');
-            $table->timestamp('sent_at');
+            $table->timestamp('sent_at')->nullable();
             $table->string('letter');
             $table->timestamps();
         });

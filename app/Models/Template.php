@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class LetterTemplate extends Model
+class Template extends Model
 {
     protected $guarded = [];
 }

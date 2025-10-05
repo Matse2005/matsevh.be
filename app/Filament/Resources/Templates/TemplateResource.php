@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\Documents;
+namespace App\Filament\Resources\Templates;
 
-use App\Filament\Resources\Documents\Pages\ManageDocuments;
-use App\Models\Document;
+use App\Filament\Resources\Templates\Pages\ManageTemplates;
+use App\Models\Template;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Resources\Resource;
@@ -18,30 +18,31 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class DocumentResource extends Resource
+class TemplateResource extends Resource
 {
-    protected static ?string $model = Document::class;
+    protected static ?string $model = Template::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocument;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentText;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Website';
-
-    protected static ?string $recordTitleAttribute = 'Document';
+    protected static string | \UnitEnum | null $navigationGroup = 'Sollicitation';
 
     public static function form(Schema $schema): Schema
     {
         return $schema
             ->components([
-                TextInput::make('name')
-                    ->required(),
                 TextInput::make('title')
-                    ->required(),
-                FileUpload::make('file_path')
-                    ->acceptedFileTypes(['application/pdf'])
-                    ->directory('site/documents')
-                    ->required(),
-                TextInput::make('type'),
-                Textarea::make('description')
+                    ->required()
+                    ->columnSpanFull(),
+                RichEditor::make('body')
+                    ->mergeTags([
+                        'company',
+                        'contact_email',
+                        'contact_person',
+                        'role',
+                        'application_name',
+                        'application_url'
+                    ])
+                    ->required()
                     ->columnSpanFull(),
             ]);
     }
@@ -49,13 +50,8 @@ class DocumentResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->recordTitleAttribute('Document')
             ->columns([
-                TextColumn::make('name')
-                    ->searchable(),
                 TextColumn::make('title')
-                    ->searchable(),
-                TextColumn::make('type')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
@@ -83,7 +79,7 @@ class DocumentResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ManageDocuments::route('/'),
+            'index' => ManageTemplates::route('/'),
         ];
     }
 }

@@ -18,7 +18,3 @@ Route::get('/mijn-cv', function () {
 Route::get('/contacteer-mij', function () {
     return view('contact');
 })->name('contact');
-
-Route::get('/gen', function () {
-    SitemapGenerator::create('https://matsevh.be')->writeToFile($path);
-})->name('contact');
