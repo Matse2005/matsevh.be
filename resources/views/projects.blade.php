@@ -13,9 +13,11 @@
                     <flux:heading level="3" size="lg">{{ $project->title }}</flux:heading>
 
                     @if ($project->description)
-                        <flux:text>
-                            {!! $project->description !!}
-                        </flux:text>
+                        <div class="prose prose-zinc dark:prose-invert">
+                            <flux:text class="">
+                                {!! $project->description !!}
+                            </flux:text>
+                        </div>
                     @endif
 
                     {{-- Technologies / Tags --}}

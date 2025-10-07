@@ -38,7 +38,7 @@ class ProjectResource extends Resource
                 TextInput::make('title')
                     ->columnSpanFull()
                     ->required(),
-                Textarea::make('description')
+                RichEditor::make('description')
                     ->columnSpanFull(),
                 TagsInput::make('technologies')
                     ->columnSpanFull(),

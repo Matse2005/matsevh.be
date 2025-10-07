@@ -10,6 +10,7 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Resources\Resource;
@@ -36,7 +37,7 @@ class CourseResource extends Resource
                 DatePicker::make('start')
                     ->required(),
                 DatePicker::make('end'),
-                Textarea::make('description')
+                RichEditor::make('description')
                     ->columnSpanFull(),
             ]);
     }

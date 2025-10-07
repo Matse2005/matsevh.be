@@ -23,8 +23,10 @@
         </div>
     </div>
     @if ($description)
-        <div class="prose">
-            <flux:text class="">{!! $description !!}</flux:text>
+        <div class="prose prose-zinc dark:prose-invert">
+            <flux:text class="">
+                {!! $description !!}
+            </flux:text>
         </div>
     @endif
 </x-card>

@@ -38,7 +38,7 @@ class StudyResource extends Resource
                 DatePicker::make('start')
                     ->required(),
                 DatePicker::make('end'),
-                Textarea::make('description')
+                RichEditor::make('description')
                     ->columnSpanFull(),
             ]);
     }

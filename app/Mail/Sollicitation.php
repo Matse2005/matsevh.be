@@ -76,17 +76,17 @@ class Sollicitation extends Mailable
         if (!$this->application->letter) {
             return [
                 Attachment::fromStorageDisk('public', $this->application->document->file_path)
-                    ->as('cv.pdf')
+                    ->as('cv_Matse_Van_Horebeek.pdf')
                     ->withMime('application/pdf'),
             ];
         }
 
         return [
             Attachment::fromStorageDisk('public', $this->application->document->file_path)
-                ->as('cv.pdf')
+                ->as('cv_Matse_Van_Horebeek.pdf')
                 ->withMime('application/pdf'),
             Attachment::fromStorageDisk('private', $this->application->letter)
-                ->as('motivatiebrief.pdf')
+                ->as('sollicitatiebrief_Matse_Van_Horebeek.pdf')
                 ->withMime('application/pdf'),
         ];
     }
