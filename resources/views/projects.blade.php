@@ -3,7 +3,9 @@
     <x-section>
         <div class="grid
     grid-cols-1 lg:grid-cols-2 gap-3">
-            @foreach (App\Models\Project::orderByDesc('id')->get() as $project)
+            @foreach (App\Models\Project::all()->sortBy(function ($project) {
+            return $project->order === 0 ? PHP_INT_MAX : $project->order;
+        })->sortByDesc('id') as $project)
                 <x-card class="space-y-4">
                     @if ($project->image)
                         <img src="/storage/{{ $project->image }}" alt="{{ $project->title }}"
