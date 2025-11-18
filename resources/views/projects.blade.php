@@ -3,9 +3,16 @@
     <x-section>
         <div class="grid
     grid-cols-1 lg:grid-cols-2 gap-3">
-            @foreach (App\Models\Project::all()->sortBy(function ($project) {
-            return $project->order === 0 ? PHP_INT_MAX : $project->order;
-        })->sortByDesc('id') as $project)
+            @foreach (App\Models\Project::all()->sort(function ($a, $b) {
+        $orderA = $a->order === 0 ? PHP_INT_MAX : $a->order;
+        $orderB = $b->order === 0 ? PHP_INT_MAX : $b->order;
+
+        if ($orderA === $orderB) {
+            return $b->id <=> $a->id; // descending by id
+        }
+
+        return $orderA <=> $orderB; // ascending by order
+    }) as $project)
                 <x-card class="space-y-4">
                     @if ($project->image)
                         <img src="/storage/{{ $project->image }}" alt="{{ $project->title }}"
