@@ -30,15 +30,15 @@
                     @endif
 
                     {{-- Technologies / Tags --}}
-                    {{-- @if ($project->technologies)
+                    @if ($project->technologies)
                         <div class="flex flex-wrap gap-2 mt-2">
                             @foreach ($project->technologies as $tech)
-                                <flux:button variant="filled" class="text-xs px-2 py-1">
+                                <flux:badge size="sm">
                                     {{ trim($tech) }}
-                                </flux:button>
+                                </flux:badge>
                             @endforeach
                         </div>
-                    @endif --}}
+                    @endif
 
                     @if ($project->github_url || $project->demo_url)
                         <div class="flex justify-between gap-3 mt-3">
