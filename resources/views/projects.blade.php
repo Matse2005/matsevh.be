@@ -44,16 +44,16 @@
                         <div class="flex justify-between gap-3 mt-3">
                             @if ($project->github_url)
                                 <flux:button class="w-full" variant="primary" icon="github"
-                                    href="{{ $project->github_url }}" target="_blank"
-                                    data-umami-event="Project Github - {{ $project->title }}">
+                                    href="{{ $project->github_url }}" target="_blank" data-umami-event="Project Github"
+                                    data-umami-event-project="{{ $project->title }}">
                                     GitHub
                                 </flux:button>
                             @endif
 
                             @if ($project->demo_url)
                                 <flux:button class="w-full" variant="primary" icon="arrow-top-right-on-square"
-                                    href="{{ $project->demo_url }}" target="_blank"
-                                    data-umami-event="Project Homepage - {{ $project->title }}">
+                                    href="{{ $project->demo_url }}" target="_blank" data-umami-event="Project Demo"
+                                    data-umami-event-project="{{ $project->title }}">
                                     Bekijken
                                 </flux:button>
                             @endif
