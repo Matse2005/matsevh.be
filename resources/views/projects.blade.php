@@ -34,7 +34,11 @@
                             @endif
                         </div>
 
-                        <div class="flex justify-between gap-3">
+                        <div class="flex max-md:flex-col md:justify-between gap-3">
+                            <flux:button class="w-full" variant="primary" icon="information-circle"
+                                href="{{ route('project', ['project' => $project->id, 'slug' => \Illuminate\Support\Str::slug($project->title)]) }}">
+                                Meer info
+                            </flux:button>
                             @if ($project->github_url)
                                 <flux:button class="w-full" icon="github" href="{{ $project->github_url }}"
                                     target="_blank" data-umami-event="Project Github"
@@ -42,11 +46,6 @@
                                     GitHub
                                 </flux:button>
                             @endif
-
-                            <flux:button class="w-full" variant="primary" icon="information-circle"
-                                href="{{ route('project', ['project' => $project->id, 'slug' => \Illuminate\Support\Str::slug($project->title)]) }}">
-                                Meer info
-                            </flux:button>
                         </div>
                     </div>
                 </x-card>
