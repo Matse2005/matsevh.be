@@ -12,8 +12,7 @@
                             data-umami-event="Project Github" data-umami-event-project="{{ $project->title }}" />
                     @endif
 
-                    <flux:button variant="primary" icon="arrow-top-right-on-square"
-                        href="{{ route('project', ['project' => $project->id, 'slug' => \Illuminate\Support\Str::slug($project->title)]) }}">
+                    <flux:button variant="primary" icon="arrow-top-right-on-square" :href="$project->demo_url">
                         Bekijken
                     </flux:button>
                 </div>
