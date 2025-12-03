@@ -2,16 +2,16 @@
     subtitle="Op deze pagina ontdek je projecten waaraan ik gewerkt heb, dit kan zelfstandig  zijn maar ook in teamverband.">
     <x-section>
         <div class="grid grid-cols-1 gap-5">
-            @foreach (App\Models\Project::orderBy('id')->get()->sort(function ($a, $b) {
-            $orderA = $a->order === 0 ? PHP_INT_MAX : $a->order;
-            $orderB = $b->order === 0 ? PHP_INT_MAX : $b->order;
+            @foreach (App\Models\Project::all()->sort(function ($a, $b) {
+        $orderA = $a->order === 0 ? PHP_INT_MAX : $a->order;
+        $orderB = $b->order === 0 ? PHP_INT_MAX : $b->order;
 
-            if ($orderA === $orderB) {
-                return $b->id <=> $a->id;
-            }
+        if ($orderA === $orderB) {
+            return $b->id <=> $a->id;
+        }
 
-            return $orderA <=> $orderB;
-        }) as $project)
+        return $orderA <=> $orderB;
+    }) as $project)
                 <x-card class="grid grid-cols-2 lg:grid-cols-2 gap-5">
                     @if ($project->image)
                         <img src="/storage/{{ $project->image }}" alt="{{ $project->title }}"
