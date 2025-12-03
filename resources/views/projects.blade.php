@@ -12,10 +12,10 @@
 
         return $orderA <=> $orderB;
     }) as $project)
-                <x-card class="grid grid-cols-2 lg:grid-cols-2 gap-5">
+                <x-card class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     @if ($project->image)
                         <img src="/storage/{{ $project->image }}" alt="{{ $project->title }}"
-                            class="w-full h-full object-cover rounded-lg" />
+                            class="w-full h-full object-cover rounded-lg aspect-video" />
                     @endif
 
                     <div class="flex flex-col justify-between gap-3">
