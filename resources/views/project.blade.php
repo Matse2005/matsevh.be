@@ -2,7 +2,7 @@
 
     <x-section>
         <div class="flex flex-col gap-5">
-            <div class="flex justify-between gap-3">
+            <div class="flex max-md:flex-col md:justify-between gap-3">
                 <flux:heading size="xl" level="1">
                     {!! $project->title !!}
                 </flux:heading>
