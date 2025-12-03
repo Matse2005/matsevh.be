@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->string('installs_source')->after('image')->nullable();
-            $table->string('installs_identifier')->after('installs_source')->nullable();
+            $table->string('short_description', 120)->before('description')->nullable();
         });
     }
 
@@ -24,8 +23,7 @@ return new class extends Migration
     {
         Schema::table('projects', function (Blueprint $table) {
             $table->dropColumn([
-                'installs_source',
-                'installs_identifier',
+                'short_description'
             ]);
         });
     }

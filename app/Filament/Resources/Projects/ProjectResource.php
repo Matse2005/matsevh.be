@@ -39,28 +39,32 @@ class ProjectResource extends Resource
                 TextInput::make('title')
                     ->columnSpanFull()
                     ->required(),
-                RichEditor::make('description')
-                    ->columnSpanFull(),
-                TagsInput::make('technologies')
+                TextInput::make('short_description')
+                    ->maxLength(120)
+                    ->required()
                     ->columnSpanFull(),
                 TextInput::make('github_url')
                     ->url(),
                 TextInput::make('demo_url')
                     ->url(),
-                FileUpload::make('image')
-                    ->image()
-                    ->disk('public')
-                    ->directory('site/projects'),
                 Select::make('installs_source')
                     ->options([
                         'vscode' => "Visual Studio Code",
                         'obsidian' => "Obsidian"
                     ]),
                 TextInput::make('installs_identifier'),
+                TagsInput::make('technologies'),
                 TextInput::make('order')
                     ->required()
                     ->numeric()
                     ->default(0),
+                FileUpload::make('image')
+                    ->image()
+                    ->disk('public')
+                    ->directory('site/projects')
+                    ->columnSpanFull(),
+                RichEditor::make('description')
+                    ->columnSpanFull(),
             ]);
     }
 

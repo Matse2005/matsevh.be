@@ -18,7 +18,7 @@
                             class="w-full h-full object-cover rounded-lg" />
                     @endif
 
-                    <div class="flex flex-col justify-between">
+                    <div class="flex flex-col justify-between gap-3">
                         <div class="">
                             <flux:heading level="3" size="lg" class="flex items-center gap-2">
                                 {{ $project->title }}
@@ -28,45 +28,26 @@
                             </flux:heading>
 
                             @if ($project->description)
-                                <div class="prose prose-zinc dark:prose-invert">
-                                    <flux:text class="">
-                                        {!! $project->description !!}
-                                    </flux:text>
-                                </div>
+                                <flux:text class="">
+                                    {{ $project->short_description }}
+                                </flux:text>
                             @endif
-
-                            {{-- Technologies / Tags --}}
-                            {{-- @if ($project->technologies)
-                            <div class="flex flex-wrap gap-2 mt-2">
-                                @foreach ($project->technologies as $tech)
-                                    <flux:badge size="sm">
-                                        {{ trim($tech) }}
-                                    </flux:badge>
-                                @endforeach
-                            </div>
-                        @endif --}}
                         </div>
 
-                        @if ($project->github_url || $project->demo_url)
-                            <div class="flex justify-between gap-3">
-                                @if ($project->github_url)
-                                    <flux:button class="w-full" variant="primary" icon="github"
-                                        href="{{ $project->github_url }}" target="_blank"
-                                        data-umami-event="Project Github"
-                                        data-umami-event-project="{{ $project->title }}">
-                                        GitHub
-                                    </flux:button>
-                                @endif
+                        <div class="flex justify-between gap-3">
+                            @if ($project->github_url)
+                                <flux:button class="w-full" icon="github" href="{{ $project->github_url }}"
+                                    target="_blank" data-umami-event="Project Github"
+                                    data-umami-event-project="{{ $project->title }}">
+                                    GitHub
+                                </flux:button>
+                            @endif
 
-                                @if ($project->demo_url)
-                                    <flux:button class="w-full" variant="primary" icon="arrow-top-right-on-square"
-                                        href="{{ $project->demo_url }}" target="_blank" data-umami-event="Project Demo"
-                                        data-umami-event-project="{{ $project->title }}">
-                                        Bekijken
-                                    </flux:button>
-                                @endif
-                            </div>
-                        @endif
+                            <flux:button class="w-full" variant="primary" icon="information-circle"
+                                href="{{ route('project', ['project' => $project->id, 'slug' => \Illuminate\Support\Str::slug($project->title)]) }}">
+                                Meer info
+                            </flux:button>
+                        </div>
                     </div>
                 </x-card>
             @endforeach

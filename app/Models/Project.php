@@ -14,6 +14,7 @@ class Project extends Model
         'demo_url',
         'image',
         'installs_source',
+        'short_description',
         'installs_identifier',
         'order',
     ];

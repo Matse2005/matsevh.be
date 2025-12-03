@@ -2,6 +2,7 @@
 
 use Livewire\Volt\Component;
 use App\Services\Installs\InstallServiceManager;
+use Illuminate\Support\Facades\Log;
 
 new class extends Component {
     public ?string $installs_source = null;
@@ -25,6 +26,7 @@ new class extends Component {
             $service = InstallServiceManager::make($this->installs_source);
             $this->installCount = $service->installs($this->installs_identifier);
         } catch (\Throwable $e) {
+            Log::debug($e);
             $this->installCount = null;
         }
 

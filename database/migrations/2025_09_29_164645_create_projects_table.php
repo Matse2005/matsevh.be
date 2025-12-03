@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->json('technologies')->nullable(); // e.g. JSON string or comma-separated
+            $table->json('technologies')->nullable();
             $table->string('github_url')->nullable();
             $table->string('demo_url')->nullable();
             $table->string('image')->nullable();
-            $table->integer('order')->default(0); // for sorting
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
     }

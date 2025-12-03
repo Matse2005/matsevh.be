@@ -1,9 +1,7 @@
 <?php
 
-use App\Services\Installs\Obsidian;
-use App\Services\Installs\Vscode;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
-use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', function () {
     return view('home');
@@ -12,6 +10,10 @@ Route::get('/', function () {
 Route::get('/projecten', function () {
     return view('projects');
 })->name('projects');
+
+Route::get('/project/{project}/{slug}', function (Project $project) {
+    return view('project', ['project' => $project]);
+})->name('project');
 
 Route::get('/mijn-cv', function () {
     return view('cv');
