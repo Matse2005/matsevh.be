@@ -1,5 +1,7 @@
 <?php
 
+use App\Services\Installs\Obsidian;
+use App\Services\Installs\Vscode;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
 

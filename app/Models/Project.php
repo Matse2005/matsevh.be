@@ -9,10 +9,12 @@ class Project extends Model
     protected $fillable = [
         'title',
         'description',
-        'technologies', // comma-separated or JSON
+        'technologies',
         'github_url',
         'demo_url',
         'image',
+        'installs_source',
+        'installs_identifier',
         'order',
     ];
 

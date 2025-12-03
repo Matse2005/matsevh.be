@@ -11,6 +11,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -50,6 +51,12 @@ class ProjectResource extends Resource
                     ->image()
                     ->disk('public')
                     ->directory('site/projects'),
+                Select::make('installs_source')
+                    ->options([
+                        'vscode' => "Visual Studio Code",
+                        'obsidian' => "Obsidian"
+                    ]),
+                TextInput::make('installs_identifier'),
                 TextInput::make('order')
                     ->required()
                     ->numeric()
