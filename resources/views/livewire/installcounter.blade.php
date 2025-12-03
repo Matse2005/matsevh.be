@@ -23,7 +23,6 @@ new class extends Component {
 
         try {
             $service = InstallServiceManager::make($this->installs_source);
-
             $this->installCount = $service->installs($this->installs_identifier);
         } catch (\Throwable $e) {
             $this->installCount = null;
@@ -34,7 +33,7 @@ new class extends Component {
 };
 ?>
 
-<flux:badge color="emerald" wire:poll.2s="loadInstalls" class="flex gap-1">
+<flux:badge color="emerald" wire:poll.500s="loadInstalls" class="flex gap-1">
     @if ($loading)
         <flux:icon.loading class="size-4" />
     @endif
