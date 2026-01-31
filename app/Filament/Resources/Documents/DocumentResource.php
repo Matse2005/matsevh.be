@@ -37,7 +37,6 @@ class DocumentResource extends Resource
                 TextInput::make('title')
                     ->required(),
                 FileUpload::make('file_path')
-                    ->acceptedFileTypes(['application/pdf'])
                     ->directory('site/documents')
                     ->required(),
                 TextInput::make('type'),

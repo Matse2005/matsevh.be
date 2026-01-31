@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FilePreviewController;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,13 @@ Route::get('/mijn-cv', function () {
     return view('cv');
 })->name('cv');
 
+Route::get('/stage', function () {
+    return view('stage');
+})->name('stage');
+
 Route::get('/contacteer-mij', function () {
     return view('contact');
 })->name('contact');
+
+Route::get('/file-preview/{fileName}', [FilePreviewController::class, 'filePreview']);
+Route::get('/document/{document}', [FilePreviewController::class, 'fileDocumentPreview']);
