@@ -34,6 +34,7 @@ class TemplateResource extends Resource
                     ->required()
                     ->columnSpanFull(),
                 RichEditor::make('body')
+                    ->fileAttachmentsDisk('public')
                     ->mergeTags([
                         'company',
                         'contact_email',

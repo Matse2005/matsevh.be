@@ -37,6 +37,7 @@ class DocumentResource extends Resource
                 TextInput::make('title')
                     ->required(),
                 FileUpload::make('file_path')
+                    ->disk('public')
                     ->directory('site/documents')
                     ->required(),
                 TextInput::make('type'),

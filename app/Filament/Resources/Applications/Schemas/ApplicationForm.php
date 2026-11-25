@@ -58,6 +58,7 @@ class ApplicationForm
                             ->disk('private')
                             ->directory('sollicitation/letters'),
                         RichEditor::make('note')
+                            ->fileAttachmentsDisk('public')
                             ->mergeTags([
                                 'company',
                                 'contact_email',

@@ -64,6 +64,7 @@ class ProjectResource extends Resource
                     ->directory('site/projects')
                     ->columnSpanFull(),
                 RichEditor::make('description')
+                    ->fileAttachmentsDisk('public')
                     ->columnSpanFull(),
             ]);
     }

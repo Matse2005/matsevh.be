@@ -39,6 +39,7 @@ class StudyResource extends Resource
                     ->required(),
                 DatePicker::make('end'),
                 RichEditor::make('description')
+                    ->fileAttachmentsDisk('public')
                     ->columnSpanFull(),
             ]);
     }

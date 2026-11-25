@@ -38,6 +38,7 @@ class CourseResource extends Resource
                     ->required(),
                 DatePicker::make('end'),
                 RichEditor::make('description')
+                    ->fileAttachmentsDisk('public')
                     ->columnSpanFull(),
             ]);
     }

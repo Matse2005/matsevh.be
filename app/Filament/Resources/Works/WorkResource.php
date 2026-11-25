@@ -39,6 +39,7 @@ class WorkResource extends Resource
                     ->required(),
                 DatePicker::make('end'),
                 RichEditor::make('description')
+                    ->fileAttachmentsDisk('public')
                     ->columnSpanFull(),
             ]);
     }
